@@ -1,5 +1,5 @@
 IMAGENAME?=jtilander/jenkins-swarm-slave
-TAG?=latest
+TAG?=arm
 DEBUG?=0
 MYNAME?=testhost
 
@@ -16,7 +16,7 @@ clean:
 	@docker rmi `docker images -q $(IMAGENAME):$(TAG)`
 
 run:
-	@command docker run --rm $(ENVIRONMENT) $(IMAGENAME):$(TAG)
+	@docker run --rm $(ENVIRONMENT) $(IMAGENAME):$(TAG)
 
 debug:
-	@command docker run --rm -it $(ENVIRONMENT) $(IMAGENAME):$(TAG) bash
+	@docker run --rm -it $(ENVIRONMENT) $(IMAGENAME):$(TAG) bash
