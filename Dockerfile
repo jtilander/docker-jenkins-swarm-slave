@@ -16,8 +16,8 @@ RUN curl --create-dirs -sSLo /usr/share/jenkins/swarm-client-${SWARM_VERSION}.ja
 RUN curl -SsL https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-amd64 > /sbin/gosu && chmod a+x /sbin/gosu
 
 ENV MYHOME=/home/jenkins \
-	UID=1000
-RUN adduser -D -u $UID jenkins && \
+	UID=999
+RUN adduser -S -D -u $UID jenkins && \
 	mkdir -p $MYHOME && chmod g+rwx $MYHOME
 
 ENV JENKINS_MEMORY=200M
