@@ -22,3 +22,9 @@ run:
 
 debug:
 	@docker run --rm -it $(ENVIRONMENT) $(IMAGENAME):$(TAG) bash
+
+push:
+	@docker push $(IMAGENAME):$(TAG)
+
+login:
+	@docker login -u jtilander
