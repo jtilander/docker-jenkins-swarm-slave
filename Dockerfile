@@ -6,7 +6,8 @@ RUN apk add --no-cache \
 		curl \
 		git \
 		make \
-		bash
+		bash \
+		docker
 
 ENV SWARM_VERSION=3.4 \
     GOSU_VERSION=1.10
