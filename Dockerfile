@@ -5,7 +5,8 @@ RUN apk add --no-cache \
 		openjdk8 \
 		curl \
 		git \
-		make
+		make \
+		docker
 
 ENV SWARM_VERSION=3.4 \
     GOSU_VERSION=1.10
